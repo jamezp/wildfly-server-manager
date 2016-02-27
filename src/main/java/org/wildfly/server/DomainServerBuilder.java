@@ -291,7 +291,7 @@ public class DomainServerBuilder {
             final ModelNode op = Operations.createReadAttributeOperation(address, "status");
             try {
                 final ModelNode result = executeForSuccess(client, op);
-                return "STARTED".equals(Operations.readResult(result).asString());
+                return "STARTED".equals(result.asString());
             } catch (IOException ignore) {
 
             }

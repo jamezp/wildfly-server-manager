@@ -56,6 +56,13 @@ public class ServerTest {
         Assert.assertNotNull(host);
         Assert.assertTrue("The host server does not appear to be running", host.isRunning());
         Assert.assertEquals("master", host.getName());
+
+        final Server serverOne = host.getServer("server-one");
+        serverOne.stop();
+        Assert.assertFalse("server-one was not stopped", serverOne.isRunning());
+        serverOne.start(-1); // TODO (jrp) something needs to be done with the timeout as it's not used here
+        Assert.assertTrue("server-one was not started", serverOne.isRunning());
+
         server.stop();
         Assert.assertFalse("The server does not appear to have stopped", server.isRunning());
     }
