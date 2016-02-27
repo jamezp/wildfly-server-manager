@@ -1,0 +1,25 @@
+#Ignore Maven target folder
+target/
+
+#Ignore Eclipse files
+.settings/
+.classpath
+.project
+
+#Ignore Intellij files
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# ignore NetBeans files
+nbactions.xml
+nb-configuration.xml
+catalog.xml
+
+# vim files
+*.swp
+/.gitk-tmp.*
+
+#OS X stuff
+.DS_Store
